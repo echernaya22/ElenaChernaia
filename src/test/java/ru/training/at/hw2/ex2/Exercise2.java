@@ -18,6 +18,8 @@ public class Exercise2 {
 
     @BeforeClass
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver",
+                "src/test/resources/drivers/chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts()

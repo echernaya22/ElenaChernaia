@@ -22,6 +22,8 @@ public class Exercise1 {
     @BeforeClass
     public void setUp() {
         softAssert = new SoftAssert();
+        System.setProperty("webdriver.chrome.driver",
+                "src/test/resources/drivers/chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts()
