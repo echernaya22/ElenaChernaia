@@ -10,7 +10,7 @@ import ru.training.at.hw3.data.ConfigReader;
 import java.util.List;
 
 public class MainPage {
-    WebDriver webDriver;
+    private WebDriver webDriver;
 
 
     @FindBy(css = "ul.navbar-right")
@@ -92,4 +92,5 @@ public class MainPage {
     public String getLeftSectionMenuText(int index) {
         return leftSectionMenuList.get(index).getText();
     }
+
 }

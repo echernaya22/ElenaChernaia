@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class DifferentElementsPage {
-    WebDriver webDriver;
+    private WebDriver webDriver;
     String templateLogAssertion = "//li[contains(text(), '%s')][contains(text(), '%s')]";
 
     @FindBy(css = ".uui-navigation.nav.navbar-nav  .dropdown-toggle")
