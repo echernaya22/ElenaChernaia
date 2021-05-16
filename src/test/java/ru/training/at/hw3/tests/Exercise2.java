@@ -52,22 +52,24 @@ public class Exercise2 extends BaseTest {
         // 9. Assert that:
         // for each checkbox there is an individual log row
         // and value is corresponded to the status of checkbox
-        Assert.assertNotNull(differentElementsPage
-                .searchLogList(ConfigReader.getPropertyValue("waterCheckbox"), "true"));
-        Assert.assertNotNull(differentElementsPage
-                .searchLogList(ConfigReader.getPropertyValue("windCheckbox"), "true"));
+        Assert.assertTrue(differentElementsPage
+                .searchLogList(ConfigReader.getPropertyValue("waterCheckbox"), "true")
+                .isDisplayed());
+        Assert.assertTrue(differentElementsPage
+                .searchLogList(ConfigReader.getPropertyValue("windCheckbox"), "true")
+                .isDisplayed());
 
         // for radio button there is a log row and value
         // is corresponded to the status of radio button
-        Assert.assertNotNull(differentElementsPage
+        Assert.assertTrue(differentElementsPage
                 .searchLogList(ConfigReader.getPropertyValue("metalRadio"),
-                        ConfigReader.getPropertyValue("selenValueRadio")));
+                        ConfigReader.getPropertyValue("selenValueRadio")).isDisplayed());
 
         // for dropdown there is a log row and value
         // is corresponded to the selected value
-        Assert.assertNotNull(differentElementsPage
+        Assert.assertTrue(differentElementsPage
                 .searchLogList(ConfigReader.getPropertyValue("colorLog"),
-                        ConfigReader.getPropertyValue("color")));
+                        ConfigReader.getPropertyValue("color")).isDisplayed());
 
         // 12. Close Browser
         //close();
