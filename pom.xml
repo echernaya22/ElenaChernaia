@@ -47,6 +47,17 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.2.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -128,6 +139,12 @@
             <id>homework_2</id>
             <properties>
                 <test.suite.xml>${test.config.path}/homework2RunAllTests.xml</test.suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>homework_3</id>
+            <properties>
+                <test.suite.xml>${test.config.path}/homework3RunAllTests.xml</test.suite.xml>
             </properties>
         </profile>
     </profiles>
