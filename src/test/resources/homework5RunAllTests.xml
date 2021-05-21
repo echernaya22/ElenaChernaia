@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="homework5TestSuite">
+    <test name="homework5">
+        <classes>
+            <class name="ru.training.at.hw5.RunAllCucumberAcceptanceTest" />
+        </classes>
+    </test>
+</suite>
