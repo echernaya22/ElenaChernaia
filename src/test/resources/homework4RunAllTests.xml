@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="homework4TestSuite">
+    <listeners>
+        <listener class-name="ru.training.at.hw4.listeners.ScreenshotListener" />
+    </listeners>
+    <parameter name="pageTitle" value="Home Page" />
+    <parameter name="fullNameUser" value="ROMAN IOVLEV" />
+    <test name="Exercise1">
+        <parameter name="headerMenuFirstTab" value="HOME" />
+        <parameter name="headerMenuSecondTab" value="CONTACT FORM" />
+        <parameter name="headerMenuThirdTab" value="SERVICE" />
+        <parameter name="headerMenuForthTab" value="METALS &amp; COLORS" />
+        <parameter name="imagesTextFirst" value="To include good practices and ideas from successful EPAM project" />
+        <parameter name="imagesTextSecond" value="To be flexible and customizable" />
+        <parameter name="imagesTextThird" value="To be multiplatform" />
+        <parameter name="imagesTextForth" value="Already have good base (about 20 internal and some external projects), wish to get more…" />
+        <parameter name="leftMenuFirstTab" value="Home" />
+        <parameter name="leftMenuSecondTab" value="Contact Form" />
+        <parameter name="leftMenuThirdTab" value="Service" />
+        <parameter name="leftMenuForthTab" value="Metals &amp; Colors" />
+        <parameter name="leftMenuFifthTab" value="Elements packs" />
+        <classes>
+            <class name="ru.training.at.hw4.tests.Exercise1"/>
+        </classes>
+    </test>
+    <test name="Exersice2">
+        <parameter name="color" value="Yellow" />
+        <parameter name="colorLog" value="Colors" />
+        <parameter name="waterCheckbox" value="Water" />
+        <parameter name="windCheckbox" value="Wind" />
+        <parameter name="metalRadio" value="metal" />
+        <parameter name="selenValueRadio" value="Selen" />
+        <classes>
+            <class name="ru.training.at.hw4.tests.Exercise2"/>
+        </classes>
+    </test>
+    <test name="Fail">
+        <parameter name="color" value="Yellow" />
+        <parameter name="colorLog" value="Colors" />
+        <parameter name="wrongColor" value="Gold"/>
+        <classes>
+            <class name="ru.training.at.hw4.tests.FailTest"/>
+        </classes>
+    </test>
+</suite>

@@ -16,6 +16,13 @@
         <testng.version>7.4.0</testng.version>
         <assertj-core.version>3.19.0</assertj-core.version>
         <selenium-java.version>3.141.59</selenium-java.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <webdrivermanager.version>4.4.3</webdrivermanager.version>
+        <guice.version>4.2.2</guice.version>
+        <slf4j-simple.version>1.7.30</slf4j-simple.version>
+        <allure-testng.version>2.13.9</allure-testng.version>
+        <aspectjweaver.version>1.8.10</aspectjweaver.version>
+        <allure.version>2.13.2</allure.version>
     </properties>
 
     <dependencies>
@@ -50,13 +57,40 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.4.3</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
-            <version>4.2.2</version>
+            <version>${guice.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
         </dependency>
     </dependencies>
 
@@ -79,7 +113,17 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${test.suite.xml}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectjweaver.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -113,6 +157,20 @@
         </plugins>
     </build>
 
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>${allure-testng.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
     <profiles>
         <profile>
             <id>sumAndSubtractTests</id>
@@ -145,6 +203,12 @@
             <id>homework_3</id>
             <properties>
                 <test.suite.xml>${test.config.path}/homework3RunAllTests.xml</test.suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>homework_4</id>
+            <properties>
+                <test.suite.xml>${test.config.path}/homework4RunAllTests.xml</test.suite.xml>
             </properties>
         </profile>
     </profiles>
