@@ -8,7 +8,7 @@ import ru.training.at.hw6.pages.JdiSite;
 import ru.training.at.hw6.entities.MetalsColorsInfo;
 import ru.training.at.hw6.entities.User;
 import ru.training.at.hw6.utils.Provider;
-import ru.training.at.hw6.utils.ResultList;
+import ru.training.at.hw6.utils.JsonDataList;
 
 
 public class JdiSiteTest extends BaseTest {
@@ -20,15 +20,15 @@ public class JdiSiteTest extends BaseTest {
 
         JdiSite.open();
 
-        homePage.login(User.ROMAN);
+        homePage.login(User.JDI_USER);
         String actual = homePage.getUserName();
 
-        Assert.assertEquals(actual, User.ROMAN.getFullName());
+        Assert.assertEquals(actual, User.JDI_USER.getFullName());
 
         homePage.openMetalsColorsPage();
 
         JdiMetalsColorsPage metalsColorsPage = new JdiMetalsColorsPage();
-        ResultList resultList = new ResultList();
+        JsonDataList resultList = new JsonDataList();
 
         metalsColorsPage.fillAndSubmitForm(info);
 

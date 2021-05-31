@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ResultList {
+public class JsonDataList {
 
     public List<String> getResultsFromJson(MetalsColorsInfo info) {
 

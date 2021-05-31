@@ -3,9 +3,7 @@ package ru.training.at.hw6.pages;
 import com.epam.jdi.light.elements.common.UIElement;
 import com.epam.jdi.light.elements.complex.WebList;
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import ru.training.at.hw6.entities.MetalsColorsInfo;
 import ru.training.at.hw6.forms.MetalsColorsSubmitForm;
 
