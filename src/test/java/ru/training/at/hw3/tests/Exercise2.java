@@ -1,6 +1,5 @@
 package ru.training.at.hw3.tests;
 
-import com.google.inject.Inject;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
